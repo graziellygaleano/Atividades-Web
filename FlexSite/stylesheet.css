@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-primaria: #2c3e50; 
+    --cor-secundaria: #34495e;
+    --cor-fundo: #f0f0f5;
+    --cor-card: white;
+    --cor-texto: black;
+    --fonte-padrao: 'Arial', sans-serif; 
+    --transicao: 0.3s ease; 
+}
+
+#tema:checked ~ .main {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+#tema:checked ~.main .card {
+    background-color: #333;
+    color: white;
+    border: 1px solid #444;
+}
+
+.botao-tema {
+    cursor: pointer; 
+    font-size: 20px;
+    transition: var(--transicao);
+}
+
+.botao-tema:hover {
+    transform: scale(1.5);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header h1 {
+    flex: 1;
+    text-align: center;
+}
+
+.menu-lateral{
+    font-size: 2rem;
+    cursor: pointer;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+
+.menu-cima {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu-cima a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-cima a:hover {
+    text-decoration: underline;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--cor-secundaria);
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    gap: 20px;
+    transition: left var(--transicao);
+    z-index: 1;
+    align-items: center;
+}
+
+#menu-lateral:checked ~ .sidebar {
+    left: 0;;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.menu-lateral {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+main {
+    flex: 1;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.intro {
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+
+
